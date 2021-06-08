@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-import MyButton from '../utility/MyButton';
+import MyButton from '../../utility/MyButton';
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import LikeButton from './LikeButton';
+import Comments from './Comments';
 
 //MUI
 import Dialog from '@material-ui/core/Dialog';
@@ -15,7 +16,7 @@ import Typography from '@material-ui/core/Typography';
 
 //Redux
 import { connect } from 'react-redux';
-import { getScream } from '../redux/actions/dataActions';
+import { getScream } from '../../redux/actions/dataActions';
 
 //Icons
 import CloseIcon from '@material-ui/icons/Close';
@@ -24,10 +25,6 @@ import ChatIcon from '@material-ui/icons/Chat';
 
 const styles = (theme) => ({
   ...theme.styleSpread,
-  invisibleSeparator: {
-    border: 'none',
-    margin: 4
-  },
   profileImage: {
     maxWidth: 200,
     height: 200,
@@ -40,7 +37,7 @@ const styles = (theme) => ({
   closeButton: {
     position: 'absolute',
     left: '90%',
-    top: '5%'
+    top: '3%'
   },
   expandButton: {
     position: 'absolute',
@@ -78,7 +75,8 @@ class ScreamDialog extends Component {
         likeCount, 
         commentCount, 
         userImage, 
-        userHandle 
+        userHandle,
+        comments
       }, 
       UI: { loading } 
     } = this.props
@@ -103,7 +101,7 @@ class ScreamDialog extends Component {
             variant="h5"
             to={`/users/${userHandle}`}
             >
-              @{userHandle}
+              {userHandle}
             </Typography>
             <hr className={classes.invisibleSeparator}/>
             <Typography
@@ -111,13 +109,14 @@ class ScreamDialog extends Component {
             >
               {body}
             </Typography>
-            <hr />
+            <hr className={classes.invisibleSeparator}/>
             <Typography
               variant="body2"
               color="textSecondary"
             >
               {dayjs(createdAt).format('h:mm a, MMM DD YYYY')}
             </Typography>
+            <hr className={classes.visibleSeparator}/>
             <LikeButton screamId={screamId}/>
             <span>{likeCount} likes</span>
             <MyButton tip="comments">
@@ -125,9 +124,12 @@ class ScreamDialog extends Component {
             </MyButton>
             <span>{commentCount} comments</span>
         </Grid>
+        <hr className={classes.invisibleSeparator}/>
+        <Comments
+          comments={comments}
+        />
       </Grid>
-    )
-
+    );
     return (
       <Fragment>
         <MyButton

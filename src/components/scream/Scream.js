@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
-import MyButton from '../utility/MyButton';
+import MyButton from '../../utility/MyButton';
 import DeleteScream from './DeleteScream';
 import ScreamDialog from './ScreamDialog';
 import LikeButton from './LikeButton';
@@ -21,7 +21,8 @@ import { connect } from 'react-redux';
 //Icons
 import ChatIcon from '@material-ui/icons/Chat';
 
-const styles = {
+const styles = (theme) => ({
+  ...theme.styleSpread,
   card: {
     position: 'relative',
     display: 'flex',
@@ -36,7 +37,7 @@ const styles = {
     padding: 25,
     objectFit: 'cover'
   }
-}
+})
 
 
 class Scream extends Component {
@@ -77,21 +78,24 @@ class Scream extends Component {
           >
               {userHandle}
           </Typography>
-          {deleteButton}
-          <Typography 
-            variant="body1"
-          >
-            {body}
-          </Typography>
           <Typography 
             variant="body2" 
             color="textSecondary"
           >
             {dayjs(createdAt).fromNow()}
           </Typography>
+          <hr className={classes.invisibleSeparator}/>
+          <hr className={classes.invisibleSeparator}/>
+          {deleteButton}
+          <Typography 
+            variant="body1"
+          >
+            {body}
+          </Typography>
+          <hr className={classes.invisibleSeparator}/>
           <LikeButton screamId={screamId}/>
           <span>{likeCount} likes</span>
-          <MyButton tip="comments">
+          <MyButton tip="Comments">
             <ChatIcon color="primary"/>
           </MyButton>
           <span>{commentCount} comments</span>
