@@ -149,6 +149,7 @@ class Profile extends Component {
             <CalendarToday color="primary"/>{' '}
             <span>Joined {dayjs(createdAt).format('MMM YYYY')} </span>
           </div>
+          <hr/>
           <MyButton 
             tip="Logout"
             onClick={this.handleLogout}
