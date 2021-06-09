@@ -191,7 +191,7 @@ class Profile extends Component {
           </Button>
         </div>
       </Paper>
-    )) : (<p>loading...</p>)
+    )) : (<p>Loading...</p>)
 
     return profileMarkup;
   }

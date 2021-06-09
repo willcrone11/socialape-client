@@ -42,7 +42,7 @@ class user extends Component {
     const { screamIdParam } = this.state;
 
     const screamsMarkup = loading ? (
-      <p> Loading data...</p>
+      <p style={{ textAlign: 'center' }}>Loading data...</p>
     ) : screams === null ? (
       <p>No Screams from this Ape!</p>
     ) : !screamIdParam ? (
