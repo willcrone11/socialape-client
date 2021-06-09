@@ -38,8 +38,7 @@ class LikeButton extends Component {
           <FavoriteBorder color="primary"/>
         </MyButton>
       </Link>
-    ) : (
-      this.likedScream() ? (
+    ) : this.likedScream() ? (
         <MyButton 
           tip="Unlike"
           onClick={this.unlikeScream}
@@ -53,8 +52,7 @@ class LikeButton extends Component {
         >
           <FavoriteBorder color="primary"/>
         </MyButton>
-      )
-    );
+      );
     return likeButton;
   }
 }

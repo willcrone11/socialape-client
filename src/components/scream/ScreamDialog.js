@@ -99,7 +99,7 @@ class ScreamDialog extends Component {
         comments
       }, 
       UI: { loading } 
-    } = this.props
+    } = this.props;
 
     const dialogMarkup = loading ? (
       <div className={classes.spinnerDiv}>

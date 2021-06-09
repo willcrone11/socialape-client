@@ -106,5 +106,5 @@ export const markNotificationsRead = (notificationsIds) => (dispatch) => {
 const setAuthorizationHeader = (token) => {
   const FBIdToken = `Bearer ${token}`
   localStorage.setItem('FBIdToken', FBIdToken);
-  axios.defaults.headers.common['Authorization'] = `Bearer ${FBIdToken}`
+  axios.defaults.headers.common['Authorization'] = FBIdToken;
 };
