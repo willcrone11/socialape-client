@@ -108,7 +108,7 @@ class PostScream extends Component {
                 label="SCREAM!"
                 multiline
                 rows="3"
-                placeholder="Scream at your fellow apes"
+                placeholder="Scream at your fellow apes..."
                 error={errors.body ? true : false}
                 helperText={errors.body}
                 className={classes.TextField}

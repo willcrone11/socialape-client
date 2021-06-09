@@ -19,7 +19,7 @@ import DeleteOutline from '@material-ui/icons/DeleteOutline';
 const styles = {
   deleteButton: {
     position: 'absolute',
-    left: '93%',
+    left: '90%',
     top: '10%'
   }
 }
