@@ -30,14 +30,12 @@ class Comments extends Component {
           const { 
             body,
             createdAt,
-            userImage,
             userHandle
           } = comment;
           return (
             <Fragment key={createdAt}>
               <Grid item sm={12}>
                 <Grid container>
-                  
                   <Grid item sm={9}>
                     <div className={classes.commentData}>
                       <Typography
