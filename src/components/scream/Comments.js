@@ -73,10 +73,10 @@ class Comments extends Component {
                 <hr className={classes.visibleSeparator}/>
               )}
             </Fragment>
-          )
+          );
         })}
       </Grid>
-    )
+    );
   }
 }
 

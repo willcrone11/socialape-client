@@ -17,6 +17,7 @@ import AuthRoute from './utility/AuthRoute';
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
+import user from './pages/user';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 const theme = createMuiTheme(themeFile);
@@ -57,6 +58,11 @@ class App extends Component {
                 exact 
                 path="/signup" 
                 component={signup} 
+              />
+              <Route
+                exact
+                path="/users/:handle"
+                component={user}
               />
             </Switch>
           </div>
