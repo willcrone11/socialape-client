@@ -90,7 +90,7 @@ class Notifications extends Component {
               {icon}
               <Typography
                 component={Link}
-                color="default"
+                color="primary"
                 variant="body1"
                 to={`/users/${not.recipient}/scream/${not.screamId}`}
               >
@@ -134,7 +134,7 @@ class Notifications extends Component {
 
 Notifications.propTypes = {
   markNotificationsRead: PropTypes.func.isRequired,
-  notifications: PropTypes.object.isRequired
+  notifications: PropTypes.array.isRequired
 };
 
 const mapStateToProps = (state) => ({

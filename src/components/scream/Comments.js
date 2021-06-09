@@ -37,13 +37,7 @@ class Comments extends Component {
             <Fragment key={createdAt}>
               <Grid item sm={12}>
                 <Grid container>
-                  <Grid item sm={2}>
-                    <img 
-                      src={userImage} 
-                      alt="comment" 
-                      className={classes.commentImage} 
-                    />
-                  </Grid>
+                  
                   <Grid item sm={9}>
                     <div className={classes.commentData}>
                       <Typography

@@ -17,7 +17,11 @@ import CalendarToday from '@material-ui/icons/CalendarToday';
 const styles = (theme) => ({
   ...theme.styleSpread,
   paper: {
-    padding: 20
+    padding: 25,
+    minWidth: 200,
+    marginRight: 20,
+    marginLeft: 20,
+    marginTop: 20,
   },
   profile: {
     '& .image-wrapper': {

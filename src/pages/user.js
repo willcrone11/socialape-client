@@ -61,10 +61,7 @@ class user extends Component {
     )
 
     return (
-      <Grid container spacing={16}>
-        <Grid item sm={8} xs={12}>
-          {screamsMarkup}
-        </Grid>
+      <Grid container spacing={3}>
         <Grid>
           {this.state.profile === null ? (
             <p>Loading profile...</p>
@@ -73,6 +70,9 @@ class user extends Component {
               profile={this.state.profile}
             />
           )}
+        </Grid>
+        <Grid item sm={8} xs={12}>
+          {screamsMarkup}
         </Grid>
       </Grid>
     )

@@ -26,12 +26,13 @@ const styles = (theme) => ({
   card: {
     position: 'relative',
     display: 'flex',
-    marginTop: 5,
+    marginTop: 20,
     marginBottom: 20,
-    marginRight: 20
+    paddingRight: 20
   },
   image: {
-    minWidth: 200
+    minWidth: 150,
+    
   },
   content: {
     padding: 25,
@@ -68,7 +69,8 @@ class Scream extends Component {
         <CardMedia 
           image={userImage}
           title='Profile Image'
-          className={classes.image}/>
+          className={classes.image}
+        />
         <CardContent className={classes.content}>
           <Typography 
             variant="h5" 
@@ -93,6 +95,7 @@ class Scream extends Component {
             {body}
           </Typography>
           <hr className={classes.invisibleSeparator}/>
+          
           <LikeButton screamId={screamId}/>
           <span>{likeCount} likes</span>
           <MyButton tip="Comments">
